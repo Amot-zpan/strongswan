@@ -1021,7 +1021,9 @@ mask of
 .B 0xffffffff
 is assumed. The special value
 .B %unique
-assigns a unique value to each newly created IPsec SA.
+assigns a unique value to each newly created IPsec SA, whereas the
+.B %dirunique
+value uses unique marks for both directions of a single IPsec SA.
 .TP
 .BR mark_in " = <value>[/<mask>]"
 sets an XFRM mark in the inbound IPsec SA and
