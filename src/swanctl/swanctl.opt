@@ -714,7 +714,8 @@ connections.<conn>.children.<child>.mark_in = 0/0x00000000
 	Netfilter mark and mask for input traffic. On Linux Netfilter may require
 	marks on each packet to match an SA having that option set. This allows
 	Netfilter rules to select specific tunnels for incoming traffic. The
-	special value _%unique_ sets a unique mark on each CHILD_SA instance.
+	special value _%unique_ sets a unique mark on each CHILD_SA instance,
+	whereas _%dirunique_ uses a unique mark on each direction of a CHILD_SA.
 
 	An additional mask may be appended to the mark, separated by _/_. The
 	default mask if omitted is 0xffffffff.
@@ -725,7 +726,8 @@ connections.<conn>.children.<child>.mark_out = 0/0x00000000
 	Netfilter mark and mask for output traffic. On Linux Netfilter may require
 	marks on each packet to match a policy having that option set. This allows
 	Netfilter rules to select specific tunnels for outgoing traffic. The
-	special value _%unique_ sets a unique mark on each CHILD_SA instance.
+	special value _%unique_ sets a unique mark on each CHILD_SA instance,
+	whereas _%dirunique_ uses a unique mark on each direction of a CHILD_SA.
 
 	An additional mask may be appended to the mark, separated by _/_. The
 	default mask if omitted is 0xffffffff.
@@ -937,4 +939,3 @@ authorities.<name>.cert_uri_base =
 	URI that resolves to the DER encoded certificate. The certificate URIs are
 	built by appending the SHA1 hash of the DER encoded certificates to this
 	base URI.
-
