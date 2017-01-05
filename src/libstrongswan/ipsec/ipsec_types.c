@@ -69,6 +69,11 @@ bool mark_from_string(const char *value, mark_t *mark)
 		mark->value = MARK_UNIQUE;
 		endptr = (char*)value + strlen("%unique");
 	}
+	else if (strcasepfx(value, "%dirunique"))
+	{
+		mark->value = MARK_DIRUNIQUE;
+		endptr = (char*)value + strlen("%dirunique");
+	}
 	else
 	{
 		mark->value = strtoul(value, &endptr, 0);

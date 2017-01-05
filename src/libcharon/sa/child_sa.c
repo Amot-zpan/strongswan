@@ -1486,6 +1486,16 @@ child_sa_t * child_sa_create(host_t *me, host_t* other,
 			this->mark_out.value = mark;
 		}
 	}
+	if (this->mark_in.value == MARK_DIRUNIQUE)
+	{
+		mark = ref_get(&unique_mark);
+		this->mark_in.value = mark;
+	}
+	if (this->mark_out.value == MARK_DIRUNIQUE)
+	{
+		mark = ref_get(&unique_mark);
+		this->mark_out.value = mark;
+	}
 
 	if (!this->reqid)
 	{

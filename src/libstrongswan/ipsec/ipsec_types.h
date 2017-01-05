@@ -183,6 +183,11 @@ struct mark_t {
 #define MARK_UNIQUE (0xFFFFFFFF)
 
 /**
+ * Special mark value that uses unique marks in each direction of each CHILD_SA
+ */
+#define MARK_DIRUNIQUE (0xFFFFFFFE)
+
+/**
  * Try to parse a mark_t from the given string of the form mark[/mask].
  *
  * @param value		string to parse
